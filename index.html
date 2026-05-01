@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DT2027届12班 - 班级主页</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="splash">
+  <div class="splash-title">DT2027届12班</div>
+  <div class="splash-subtitle">INITIALIZING</div>
+  <div class="splash-progress"><div class="splash-progress-bar" id="progressBar"></div></div>
+  <div class="splash-percent" id="percentDisplay">0%</div>
+</div>
+
+<div class="top-bar">
+  <div class="logo-box"></div>
+  <div class="motto-text">要去落实</div>
+  <div class="top-right">
+    <div class="top-link-menu">
+      <span class="top-link" id="linkMenuTrigger">常用链接 <i class="fas fa-chevron-down"></i></span>
+      <div class="link-dropdown" id="linkDropdown">
+        <div class="top-link" onclick="openSSZX(); hideLinkMenu()">sszx.cn</div>
+        <div class="top-link" onclick="open12306(); hideLinkMenu()">12306.cn</div>
+      </div>
+    </div>
+    <button class="nav-darkmode-btn" id="darkModeBtn"><i class="fas fa-moon"></i></button>
+  </div>
+</div>
+
+<div class="vertical-text" onclick="window.open('https://mentalomega.com/ch/','_blank')">此乃终结 亦乃开端</div>
+
+<div class="sidebar" id="sidebar">
+  <button class="sidebar-btn active" data-target="section1"><i class="fas fa-book-open"></i> 作业</button>
+  <button class="sidebar-btn" data-target="section2"><i class="fas fa-calendar-alt"></i> 课表</button>
+  <button class="sidebar-btn" data-target="section3"><i class="fas fa-random"></i> 抽号</button>
+  <button class="sidebar-btn" data-target="section4"><i class="fas fa-th"></i> 座位</button>
+  <button class="sidebar-btn" data-target="section5"><i class="fas fa-star"></i> 私货</button>
+</div>
+<div class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-chevron-left"></i></div>
+
+<div class="main-content">
+  <div class="hero-section" id="heroSection">
+    <div class="hero-title">DT2027届12班</div>
+    <div class="time-block" id="timeDisplay">00:00:00</div>
+    <div class="weather-countdown"><div id="countdownDisplay">距离2027年高考还有 ? 天</div></div>
+  </div>
+
+  <div class="page-section" id="section1">
+    <table id="homework-table">
+      <tr><td style="background:var(--bg-main);">国学</td><td style="background:var(--bg-main);">数学</td><td style="background:var(--bg-main);">洋文</td></tr>
+      <tr><td contenteditable="true" id="hw-guoxue"></td><td contenteditable="true" id="hw-math"></td><td contenteditable="true" id="hw-english"></td></tr>
+      <tr><td style="background:var(--bg-main);">物理</td><td style="background:var(--bg-main);">化学</td><td style="background:var(--bg-main);">生物</td></tr>
+      <tr><td contenteditable="true" id="hw-physics"></td><td contenteditable="true" id="hw-chemistry"></td><td contenteditable="true" id="hw-biology"></td></tr>
+      <tr><td colspan="3" contenteditable="true" id="hw-note" style="text-align:left;">备注...</td></tr>
+    </table>
+    <div id="homeworkStyleTop" style="display:flex; gap:8px; align-items:center; justify-content:center; flex-wrap:wrap; margin-top:16px;"></div>
+    <div class="homework-style-bottom" id="homeworkStyleBottom"></div>
+    <div id="colorRow" class="color-row"></div>
+  </div>
+
+  <div class="page-section" id="section2">
+    <table id="course-table">
+      <tr><th>周日</th><th>周一</th><th>周二</th><th>周三</th><th>周四</th><th>周五</th></tr>
+      <tr><td>-</td><td>化学<br>苏芹</td><td>数学<br>林敬松</td><td>物理<br>江燕卿</td><td>外语<br>李宇凤</td><td>生物<br>林娟娟</td></tr>
+      <tr><td>-</td><td>数学<br>林敬松</td><td>数学<br>林敬松</td><td>物理<br>江燕卿</td><td>外语<br>李宇凤</td><td>物理<br>江燕卿</td></tr>
+      <tr><td>-</td><td>生物<br>林娟娟</td><td>语文<br>谢道明</td><td>语文<br>谢道明</td><td rowspan="2">数学<br>林敬松</td><td>化学<br>苏芹</td></tr>
+      <tr><td>-</td><td>外语<br>李宇凤</td><td>外语<br>李宇凤</td><td>语文<br>谢道明</td><td>语文<br>谢道明</td></tr>
+      <tr><td>-</td><td>午读</td><td>午读</td><td>用膳</td><td>用膳</td><td>午读</td></tr>
+      <tr><td>-</td><td>物理<br>江燕卿</td><td>生物<br>林娟娟</td><td>体育</td><td>化学<br>苏芹</td><td>外语<br>李宇凤</td></tr>
+      <tr><td>-</td><td>语文<br>谢道明</td><td>物理<br>江燕卿</td><td>化学/生物<br>苏芹/娟娟</td><td>语文<br>谢道明</td><td>数学<br>林敬松</td></tr>
+      <tr><td>-</td><td>自习</td><td>化学<br>苏芹</td><td>数学<br>林敬松</td><td>生物<br>林娟娟</td><td>体育</td></tr>
+      <tr><td>-</td><td>班会</td><td>校本</td><td>外语<br>李宇凤</td><td>物理<br>江燕卿</td><td>自习</td></tr>
+      <tr><td>生物</td><td>数学</td><td>物理</td><td>英语</td><td>语文</td><td>周测</td></tr>
+    </table>
+  </div>
+
+  <div class="page-section" id="section3" style="min-height: 600px;">
+    <div id="randomStudent" style="text-align:center;">
+      <div class="draw-control" id="drawControl"></div>
+      <button id="randomBtn" style="padding:10px 30px; background:var(--primary); color:white; border:none; border-radius:0; cursor:pointer; font-size:18px; margin:16px 0;">开始</button>
+      <div id="resultDisplay" style="font-size:72px; font-weight:bold; color:var(--accent); margin:20px 0;"></div>
+      <div class="draw-history" id="drawHistory">已抽号码：无</div>
+      <p class="note">1～56号随机抽取，童叟无欺</p>
+      <div style="margin-top:60px;">&nbsp;</div>
+    </div>
+  </div>
+
+  <div class="page-section" id="section4">
+    <img src="zuowei.png" class="seat-img" alt="座位表" style="max-width:100%;height:auto;display:block;margin:0 auto;">
+    <div class="img-caption" style="text-align:center;margin-top:8px;color:var(--text-light);">图5-14  间作套种在农业生产的实际应用</div>
+  </div>
+
+  <div class="page-section" id="section5">
+    <img src="舟.png" alt="舟" style="max-width:100%;height:auto;display:block;margin:0 auto;box-shadow:var(--shadow-md);">
+  </div>
+
+  <div class="school-intro" style="margin:32px auto;line-height:1.8;color:var(--text-secondary);max-width:800px;text-indent:2em;">
+    福建省厦门双十中学创办于1919年，为纪念辛亥革命而命名，位于福建省厦门市，是福建省文明学校、福建省示范性学校、全国现代教育技术实验学校评估成果突出学校。学校现有镇海、枋湖、翔安校区初中部、翔安校区高中部四个校区，总占地面积487亩，截至2021年设有120个班级，在校生5797人，教职工514人，其中市级骨干教师105人、特级教师5人。校训“勤毅信诚”源于1922年校歌。
+  </div>
+
+  <div class="ad-space">🔥 广告位招租 🔥 邮箱：845766124@qq.com</div>
+  <img src="mingyan.jpg" class="mingyan-img" alt="名言" style="display:block;margin:20px auto;max-width:90%;">
+
+  <div class="footer">
+    <p>版权所有 Copyright© 2026 DT2027届12班</p>
+    <p style="margin-top:4px;font-weight:500;">勤·毅·诚·敏 | 同学记着勿相忘</p>
+    <p style="font-size:12px;opacity:0.7;">一切解释权归dotphi所有</p>
+    <p class="visit-count" id="visitCount">本页已被访问 0 次</p>
+    <img src="适龄提示.png" alt="适龄提示" class="footer-right-image" id="ageImg">
+  </div>
+</div>
+
+<div id="fullScreenClock">
+  <div id="hms">00:00:00</div>
+  <div id="ymd">2027-01-01</div>
+  <div class="clock-quote">当我们跪下去的时候，伟大的领袖便产生了。当我们不会反抗的时候，奴隶便产生了。当我们不会质疑，骗子便产生了。当我们太娇惯，畜生便产生了。——「英国」丘吉尔</div>
+</div>
+
+<div id="hw-carousel-overlay">
+  <div id="hw-carousel-track"></div>
+  <div class="carousel-quote">我们必须想象西西弗斯是幸福的</div>
+</div>
+
+<div id="game2048">
+  <div class="header">
+    <span style="color:#fff;">2048</span>
+    <button class="close-btn" onclick="closeGame()">&times;</button>
+  </div>
+  <div class="grid" id="gameGrid"></div>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
