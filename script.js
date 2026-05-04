@@ -301,6 +301,7 @@ function initLinkMenu(){
 }
 function openSSZX(){window.open('https://www.sszx.cn','_blank');}
 function open12306(){window.open('https://www.12306.cn/index/','_blank');}
+function openRecentWork(){window.open('https://delldai-art.github.io','_blank');}
 function hideLinkMenu(){document.getElementById('linkDropdown').style.display='none';}
 
 /* 下滑入场 */
